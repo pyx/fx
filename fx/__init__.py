@@ -6,7 +6,7 @@
 __all__ = ['Function', 'compose', 'flip']
 
 __version__ = (0, 1)
-__release__ = '-dev'
+__release__ = ''
 
 VERSION = '%d.%d' % __version__ + __release__
 
