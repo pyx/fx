@@ -1,4 +1,4 @@
-from fx import f
+from fx.function import Function as f
 
 from functools import partial
 from operator import add, sub, mul, truediv, neg
