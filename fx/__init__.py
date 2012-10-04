@@ -10,7 +10,8 @@ __release__ = 'dev'
 
 VERSION = '%d.%d' % __version__ + __release__
 
-from fx.function import Function, compose, flip
+from fx.function import Function
+from fx.utils import compose, flip
 
 # alias for less typing
 f = Function
