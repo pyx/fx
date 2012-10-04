@@ -28,12 +28,12 @@ def test_compose():
     # different orders, yield different outputs.
     f = id
     g = str
-    h = hash
+    h = type
 
     f1 = compose(f, compose(g, h))
     f2 = compose(compose(f, g), h)
 
-    ns = [42, '42', sum, f]
+    ns = [42, 0.5, '42', sum, f, lambda: 0]
     for n in ns:
         # make sure these functions yield different outputs when composed in
         # different order,
@@ -41,8 +41,12 @@ def test_compose():
         assert f2(n) != compose(f, compose(h, g))(n)
         assert f1(n) != compose(g, compose(f, h))(n)
         assert f2(n) != compose(g, compose(f, h))(n)
+        assert f1(n) != compose(g, compose(h, f))(n)
+        assert f2(n) != compose(g, compose(h, f))(n)
         assert f1(n) != compose(h, compose(g, f))(n)
         assert f2(n) != compose(h, compose(g, f))(n)
+        assert f1(n) != compose(h, compose(f, g))(n)
+        assert f2(n) != compose(h, compose(f, g))(n)
         # but compose should obey associative law.
         assert f1(n) == f2(n)
 
