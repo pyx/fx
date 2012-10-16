@@ -26,7 +26,7 @@ def test_compose():
 
     # NOTE: these functions are specifically chosen, so that when composed in
     # different orders, yield different outputs.
-    f = id
+    f = hash
     g = str
     h = type
 
