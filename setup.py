@@ -19,7 +19,7 @@ setup(
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
@@ -30,7 +30,7 @@ setup(
     ],
     author='Philip Xu',
     author_email='pyx@xrefactor.com',
-    url='https://bitbucket.org/pyx/fx',
+    url='https://bitbucket.org/pyx/fx/',
     download_url=(
         'https://bitbucket.org/pyx/fx/get/%s.tar.bz2' % VERSION),
     packages=['fx'],
