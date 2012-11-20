@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2012, Philip Xu <pyx@xrefactor.com>
 # License: BSD New, see LICENSE for details.
-"""an approach to coding higher-order functions"""
+"""fx - a functional programming approach"""
 
 __all__ = ['Function', 'compose', 'flip']
 

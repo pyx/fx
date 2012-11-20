@@ -1,6 +1,6 @@
-=================================================
-fx - an approach to coding higher-order functions
-=================================================
+======================================
+fx - a functional programming approach
+======================================
 
 ::
 
@@ -16,7 +16,7 @@ Introduction
 **TL;DR - YAGNI.**
 
 Inspired by `Haskell <http://www.haskell.org/>`_'s rich set of operators,
-this is an approach to coding higher-order functions with operators in `Python <http://www.python.org/>`_.
+this is an approach to functional programming with operators in `Python <http://www.python.org/>`_.
 
   "It's fun... It's insane... It's insanely fun."
 
