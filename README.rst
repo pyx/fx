@@ -104,8 +104,8 @@ Issue Tracker:
 Source Package @ PyPI:
   http://pypi.python.org/pypi/fx/
 
-Mercurial Repoistory @ bitbucket:
+Mercurial Repository @ bitbucket:
   https://bitbucket.org/pyx/fx/
 
-Git Repoistory @ Github:
+Git Repository @ Github:
   https://github.com/pyx/fx/
