@@ -1,9 +1,5 @@
-syntax: regexp
-
 syntax: glob
-.bzr
-.git
-.svn
+.*
 
 tags
 .tags
