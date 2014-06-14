@@ -48,6 +48,10 @@ class Function(object):
         [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
         """
         self.func = function if callable(function) else lambda: function
+        # copy attributes manually, functools.update_wrapper breaks on partial
+        # object in python 2.7 because it does not have '__module__'
+        for attr in ('__module__', '__name__', '__doc__'):
+            setattr(self, attr, getattr(self.func, attr, None))
 
     @classmethod
     def clone(cls, function):
