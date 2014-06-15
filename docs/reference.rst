@@ -110,6 +110,28 @@ Function Wrapper
   .. automethod:: __iter__
 
 
+Item Getter
+===========
+
+.. data:: x
+
+  A factory object to create item getters.
+
+  >>> from fx import x
+  >>> head = x[0]
+  >>> head([1, 2, 3])
+  1
+  >>> tail = x[1:]
+  >>> tail([1, 2, 3])
+  [2, 3]
+  >>> second = tail[0]
+  >>> second([1, 2, 3])
+  2
+  >>> get_name = x['name']
+  >>> get_name({'name': 'Joe', 'age': 42})
+  'Joe'
+
+
 Utility Functions
 =================
 
@@ -119,6 +141,10 @@ Utility Functions
 
 Alias
 =====
+
+.. data:: _
+
+   an alias to :data:`x`
 
 .. class:: f
 

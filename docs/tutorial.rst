@@ -507,6 +507,87 @@ Operator                                  Description
 .. _High cohesive invoke operator: `Function Invocation`_
 
 
+Item Getter
+===========
+
+There is a factory object :data:`~fx.x`, that creates item getters.
+
+  .. note:: This is different from standard library's ``operator.itemgetter``.
+
+Creating an index getter:
+
+  >>> from fx import x
+  >>> first = x[0]
+  >>> first([1, 2, 3])
+  1
+
+Keys can be ``slice`` as well:
+
+  >>> rest = x[1:]
+  >>> rest([1, 2, 3])
+  [2, 3]
+
+Item getters can be chained:
+
+  >>> second = rest[0]
+  >>> second([1, 2, 3])
+  2
+  >>> third = x[1:][1:][0]
+  >>> third([1, 2, 3])
+  3
+
+Keys are not limited to numbers:
+
+  >>> get_name = x['name']
+  >>> get_name({'name': 'Joe', 'age': 42})
+  'Joe'
+
+:data:`~fx._` is an alias to :data:`~fx.x`:
+
+  >>> from fx import _
+  >>> age = _['age']
+  >>> age({'name': 'Joe', 'age': 42})
+  42
+
+Item getters work on generators as well:
+
+  >>> def monty():
+  ...     yield 'spam'
+  ...     yield 'ham'
+  ...     yield 'eggs'
+  >>> first(monty())
+  'spam'
+  >>> second(monty())
+  'ham'
+  >>> third(monty())
+  'eggs'
+  >>> odd_indices = x[::2]
+  >>> list(odd_indices(monty()))
+  ['spam', 'eggs']
+
+Iterm getters is non-strict, e.g, work on infinite sequence:
+
+  >>> from itertools import count
+  >>> first(count(1))
+  1
+  >>> second(count(1))
+  2
+  >>> third(count(1))
+  3
+
+Using itemgetter in pipeline:
+
+  >>> def fibonacci():
+  ...     """Fibonacci sequence starts with 1, 1"""
+  ...     a, b = 0, 1
+  ...     while True:
+  ...         a, b = b, a + b
+  ...         yield a
+  >>> fib = fibonacci()
+  >>> f(fib) | _[:8] | list == [1, 1, 2, 3, 5, 8, 13, 21]
+  True
+
+
 Utility Functions
 =================
 
@@ -527,4 +608,3 @@ except that two functions instead of one are required because there is no ``self
   >>> less_then = flip(greater_then)
   >>> less_then(1, 2)
   True
-
