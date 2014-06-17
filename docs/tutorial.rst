@@ -565,7 +565,7 @@ Item getters work on generators as well:
   >>> list(odd_indices(monty()))
   ['spam', 'eggs']
 
-Iterm getters is non-strict, e.g, work on infinite sequence:
+Item getters is non-strict, e.g, work on infinite sequence:
 
   >>> from itertools import count
   >>> first(count(1))
