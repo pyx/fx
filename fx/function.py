@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2012, Philip Xu <pyx@xrefactor.com>
+# Copyright 2012-2014, Philip Xu <pyx@xrefactor.com>
 # License: BSD New, see LICENSE for details.
 """fx.function - implements class Function."""
 

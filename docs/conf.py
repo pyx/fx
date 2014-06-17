@@ -17,7 +17,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 project = u'fx'
-copyright = u'2012, Philip Xu'
+copyright = u'2012-2014, Philip Xu'
 
 version = '%d.%d' % fx.__version__
 release = fx.VERSION
